@@ -30,4 +30,19 @@
         // Navigation
         public ICollection<Product> Products { get; set; } = new List<Product>();
     }
+
+    public class StockAdjustment
+    {
+        public int AdjustmentId { get; set; }
+        public int ProductId { get; set; }
+        public int AdjustedByUserId { get; set; }
+        public int QuantityBefore { get; set; }
+        public int QuantityAfter { get; set; }
+        public string? Reason { get; set; }
+        public DateTime AdjustedAt { get; set; }
+
+        // Navigation
+        public Product? Product { get; set; }
+        public User? AdjustedBy { get; set; }
+    }
 }
