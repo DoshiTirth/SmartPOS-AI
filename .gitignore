@@ -1,4 +1,4 @@
-# ─── .NET / C# ────────────────────────────────────────
+# .NET / C# 
 bin/
 obj/
 *.user
@@ -15,13 +15,13 @@ obj/
 *.VC.db
 *.DS_Store
 
-# ─── Entity Framework ─────────────────────────────────
+# Entity Framework 
 *.mdf
 *.ldf
 *.bak
 Migrations/
 
-# ─── Python ───────────────────────────────────────────
+# Python 
 __pycache__/
 *.py[cod]
 *.pyo
@@ -34,7 +34,7 @@ venv/
 env/
 .venv/
 
-# ─── ML Models ────────────────────────────────────────
+# ML Models
 SmartPOS.AI/forecasting/*.pkl
 SmartPOS.AI/forecasting/*.joblib
 SmartPOS.AI/segmentation/*.pkl
@@ -42,24 +42,24 @@ SmartPOS.AI/segmentation/*.joblib
 SmartPOS.AI/anomaly/*.pkl
 SmartPOS.AI/anomaly/*.joblib
 
-# ─── React / Node ─────────────────────────────────────
+# React / Node
 node_modules/
 SmartPOS.Web/dist/
 SmartPOS.Web/build/
 SmartPOS.Web/.env.local
 
-# ─── Environment & Secrets ────────────────────────────
+# Environment & Secrets
 .env
 .env.local
 .env.production
 appsettings.Development.json
 
-# ─── IDE / OS ─────────────────────────────────────────
+# IDE / OS
 .vscode/
 .idea/
 Thumbs.db
 Desktop.ini
 
-# ─── Logs ─────────────────────────────────────────────
+# Logs
 *.log
 logs/
