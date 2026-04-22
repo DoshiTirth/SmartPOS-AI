@@ -17,6 +17,7 @@ namespace SmartPOS.Infrastructure.Data
         public DbSet<AnomalyLog> AnomalyLogs { get; set; }
         public DbSet<SalesForecast> SalesForecasts { get; set; }
         public DbSet<AIAssistantLog> AIAssistantLogs { get; set; }
+        public DbSet<StockAdjustment> StockAdjustments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
