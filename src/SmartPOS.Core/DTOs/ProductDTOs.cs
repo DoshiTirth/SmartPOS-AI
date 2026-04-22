@@ -46,4 +46,11 @@
         public int LowStockThreshold { get; set; }
         public string CategoryName { get; set; } = string.Empty;
     }
+
+    public class AdjustStockDto
+    {
+        public int Quantity { get; set; }
+        public int AdjustedByUserId { get; set; }
+        public string Reason { get; set; } = string.Empty;
+    }
 }
