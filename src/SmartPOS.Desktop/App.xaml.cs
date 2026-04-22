@@ -1,14 +1,10 @@
-﻿using System.Configuration;
-using System.Data;
+﻿using SmartPOS.Desktop.Services;
 using System.Windows;
 
 namespace SmartPOS.Desktop
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+        public static ApiService ApiService { get; set; } = new ApiService();
     }
-
 }
