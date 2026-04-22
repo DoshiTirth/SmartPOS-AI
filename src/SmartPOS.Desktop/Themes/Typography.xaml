@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Font Sizes -->
+    <System:Double x:Key="FontSizeXS"   xmlns:System="clr-namespace:System;assembly=mscorlib">11</System:Double>
+    <System:Double x:Key="FontSizeSM"   xmlns:System="clr-namespace:System;assembly=mscorlib">13</System:Double>
+    <System:Double x:Key="FontSizeMD"   xmlns:System="clr-namespace:System;assembly=mscorlib">15</System:Double>
+    <System:Double x:Key="FontSizeLG"   xmlns:System="clr-namespace:System;assembly=mscorlib">18</System:Double>
+    <System:Double x:Key="FontSizeXL"   xmlns:System="clr-namespace:System;assembly=mscorlib">22</System:Double>
+    <System:Double x:Key="FontSize2XL"  xmlns:System="clr-namespace:System;assembly=mscorlib">28</System:Double>
+    <System:Double x:Key="FontSize3XL"  xmlns:System="clr-namespace:System;assembly=mscorlib">36</System:Double>
+
+    <!-- Font Family -->
+    <FontFamily x:Key="FontPrimary">Segoe UI</FontFamily>
+    <FontFamily x:Key="FontMono">Cascadia Code, Consolas</FontFamily>
+
+    <!-- Corner Radius -->
+    <CornerRadius x:Key="RadiusSM">4</CornerRadius>
+    <CornerRadius x:Key="RadiusMD">8</CornerRadius>
+    <CornerRadius x:Key="RadiusLG">12</CornerRadius>
+    <CornerRadius x:Key="RadiusXL">16</CornerRadius>
+
+</ResourceDictionary>

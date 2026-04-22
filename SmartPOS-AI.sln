@@ -3,7 +3,37 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.37111.16 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPOS.Core", "src\SmartPOS.Core\SmartPOS.Core.csproj", "{30B15244-6626-4EA6-BD59-17C5CDE8860F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPOS.Infrastructure", "src\SmartPOS.Infrastructure\SmartPOS.Infrastructure.csproj", "{FBA3D7B4-C723-4442-858C-6B574A8E1418}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPOS.API", "src\SmartPOS.API\SmartPOS.API.csproj", "{990C1273-DD28-4526-A20F-9F210B598E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPOS.Desktop", "src\SmartPOS.Desktop\SmartPOS.Desktop.csproj", "{1C935B4F-3D13-47A2-8472-2CAE84FBFC55}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30B15244-6626-4EA6-BD59-17C5CDE8860F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B15244-6626-4EA6-BD59-17C5CDE8860F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B15244-6626-4EA6-BD59-17C5CDE8860F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B15244-6626-4EA6-BD59-17C5CDE8860F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBA3D7B4-C723-4442-858C-6B574A8E1418}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBA3D7B4-C723-4442-858C-6B574A8E1418}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBA3D7B4-C723-4442-858C-6B574A8E1418}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBA3D7B4-C723-4442-858C-6B574A8E1418}.Release|Any CPU.Build.0 = Release|Any CPU
+		{990C1273-DD28-4526-A20F-9F210B598E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{990C1273-DD28-4526-A20F-9F210B598E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{990C1273-DD28-4526-A20F-9F210B598E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{990C1273-DD28-4526-A20F-9F210B598E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C935B4F-3D13-47A2-8472-2CAE84FBFC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C935B4F-3D13-47A2-8472-2CAE84FBFC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C935B4F-3D13-47A2-8472-2CAE84FBFC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C935B4F-3D13-47A2-8472-2CAE84FBFC55}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
