@@ -8,10 +8,10 @@ INSERT INTO Roles (RoleName, Description) VALUES
 
 
 INSERT INTO Users (FullName, Email, PasswordHash, RoleId) VALUES
-('System Admin',   'admin@smartpos.com',   '$2a$11$KQpFbHzDJcx1e1B3sLhqZuH9L3zP8mN2oR4vT6wX0yA5bC7dE9fG1', 1),
-('Sarah Manager',  'manager@smartpos.com', '$2a$11$KQpFbHzDJcx1e1B3sLhqZuH9L3zP8mN2oR4vT6wX0yA5bC7dE9fG1', 2),
-('John Cashier',   'cashier1@smartpos.com','$2a$11$KQpFbHzDJcx1e1B3sLhqZuH9L3zP8mN2oR4vT6wX0yA5bC7dE9fG1', 3),
-('Emily Cashier',  'cashier2@smartpos.com','$2a$11$KQpFbHzDJcx1e1B3sLhqZuH9L3zP8mN2oR4vT6wX0yA5bC7dE9fG1', 3);
+('System Admin',   'admin@smartpos.com',   '$2a$11$H0959ALflEf3w61xvUFFduB1qEj9rOUuzhD4CLpXt46iRtl73BjCa', 1),
+('Sarah Manager',  'manager@smartpos.com', '$2a$11$H0959ALflEf3w61xvUFFduB1qEj9rOUuzhD4CLpXt46iRtl73BjCa', 2),
+('John Cashier',   'cashier1@smartpos.com','$2a$11$H0959ALflEf3w61xvUFFduB1qEj9rOUuzhD4CLpXt46iRtl73BjCa', 3),
+('Emily Cashier',  'cashier2@smartpos.com','$2a$11$H0959ALflEf3w61xvUFFduB1qEj9rOUuzhD4CLpXt46iRtl73BjCa', 3);
 
 -- SEED: Categories
 

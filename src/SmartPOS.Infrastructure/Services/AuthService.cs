@@ -15,6 +15,7 @@ namespace SmartPOS.Infrastructure.Services
         private readonly SmartPOSDbContext _context;
         private readonly IConfiguration _configuration;
 
+
         public AuthService(SmartPOSDbContext context, IConfiguration configuration)
         {
             _context = context;
@@ -30,6 +31,7 @@ namespace SmartPOS.Infrastructure.Services
             if (user == null) return null;
 
             bool validPassword = BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash);
+
             if (!validPassword) return null;
 
             // Update last login
