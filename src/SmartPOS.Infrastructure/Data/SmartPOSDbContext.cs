@@ -129,6 +129,16 @@ namespace SmartPOS.Infrastructure.Data
             {
                 entity.HasKey(e => e.LogId);
             });
+
+            // StockAdjustment
+            modelBuilder.Entity<StockAdjustment>(entity =>
+            {
+                entity.HasKey(e => e.AdjustmentId);
+                entity.HasOne(e => e.Product)
+                      .WithMany()
+                      .HasForeignKey(e => e.ProductId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
         }
     }
 }
