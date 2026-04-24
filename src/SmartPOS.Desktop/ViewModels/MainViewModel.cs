@@ -8,15 +8,6 @@ using System.Windows.Threading;
 
 namespace SmartPOS.Desktop.ViewModels
 {
-    //public class CartItem
-    //{
-    //    public int ProductId { get; set; }
-    //    public string ProductName { get; set; } = string.Empty;
-    //    public decimal UnitPrice { get; set; }
-    //    public int Quantity { get; set; }
-    //    public decimal LineTotal => UnitPrice * Quantity;
-    //}
-
     public class CartItem : BaseViewModel
     {
         private int _quantity;
