@@ -41,6 +41,8 @@ SmartPOS.AI/segmentation/*.pkl
 SmartPOS.AI/segmentation/*.joblib
 SmartPOS.AI/anomaly/*.pkl
 SmartPOS.AI/anomaly/*.joblib
+SmartPOS.AI/models/*.pkl
+SmartPOS.AI/models/*.joblib
 
 # React / Node
 node_modules/
