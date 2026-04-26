@@ -1,4 +1,5 @@
-﻿using System.Windows.Controls;
+﻿using SmartPOS.Desktop.ViewModels;
+using System.Windows.Controls;
 
 namespace SmartPOS.Desktop.Views
 {
@@ -7,6 +8,7 @@ namespace SmartPOS.Desktop.Views
         public TransactionsView()
         {
             InitializeComponent();
+            DataContext = new TransactionsViewModel();
         }
     }
 }
