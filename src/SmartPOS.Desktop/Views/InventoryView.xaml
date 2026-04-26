@@ -1,11 +1,213 @@
 ﻿<UserControl x:Class="SmartPOS.Desktop.Views.InventoryView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid Background="Transparent">
-        <TextBlock Text="Inventory Management — Coming Soon"
-                   Foreground="#FF94A3B8"
-                   FontSize="18"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"/>
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks">
+
+    <Grid Margin="24">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header -->
+        <Grid Grid.Row="0" Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="Inventory Management"
+                           Style="{StaticResource TextHeading}"/>
+                <TextBlock Text="Monitor stock levels and adjust inventory"
+                           Style="{StaticResource TextSubheading}"
+                           Margin="0,4,0,0"/>
+            </StackPanel>
+            <Button Style="{StaticResource ButtonPrimary}"
+                    Padding="16,8"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Command="{Binding RefreshCommand}">
+                <StackPanel Orientation="Horizontal">
+                    <iconPacks:PackIconMaterial Kind="Refresh"
+                                               Width="14" Height="14"
+                                               VerticalAlignment="Center"
+                                               Margin="0,0,8,0"/>
+                    <TextBlock Text="Refresh" FontSize="13"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <!-- KPI Cards -->
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Total Products -->
+            <Border Grid.Column="0" Style="{StaticResource Card}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Total Products"
+                               Style="{StaticResource TextMuted}"
+                               Margin="0,0,0,8"/>
+                    <TextBlock Text="{Binding TotalProducts}"
+                               Foreground="{StaticResource BrushTextPrimary}"
+                               FontSize="28"
+                               FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Low Stock -->
+            <Border Grid.Column="1" Style="{StaticResource Card}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Low Stock Items"
+                               Style="{StaticResource TextMuted}"
+                               Margin="0,0,0,8"/>
+                    <TextBlock Text="{Binding LowStockCount}"
+                               Foreground="{StaticResource BrushWarning}"
+                               FontSize="28"
+                               FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Out of Stock -->
+            <Border Grid.Column="2" Style="{StaticResource Card}" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Out of Stock"
+                               Style="{StaticResource TextMuted}"
+                               Margin="0,0,0,8"/>
+                    <TextBlock Text="{Binding OutOfStockCount}"
+                               Foreground="{StaticResource BrushDanger}"
+                               FontSize="28"
+                               FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+
+            <!-- Total Value -->
+            <Border Grid.Column="3" Style="{StaticResource Card}">
+                <StackPanel>
+                    <TextBlock Text="Inventory Value"
+                               Style="{StaticResource TextMuted}"
+                               Margin="0,0,0,8"/>
+                    <TextBlock Text="{Binding InventoryValue, StringFormat='${0:N0}'}"
+                               Foreground="{StaticResource BrushAccent}"
+                               FontSize="28"
+                               FontWeight="Bold"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- Product Table -->
+        <Border Grid.Row="2" Style="{StaticResource Card}" Padding="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Table Header -->
+                <Border Grid.Row="0"
+                        Background="{StaticResource BrushSurface2}"
+                        CornerRadius="12,12,0,0"
+                        Padding="16,12">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Product" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                        <TextBlock Grid.Column="1" Text="SKU" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                        <TextBlock Grid.Column="2" Text="Category" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                        <TextBlock Grid.Column="3" Text="Stock" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                        <TextBlock Grid.Column="4" Text="Price" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                        <TextBlock Grid.Column="5" Text="Status" Style="{StaticResource TextMuted}" FontWeight="SemiBold"/>
+                    </Grid>
+                </Border>
+
+                <!-- Table Rows -->
+                <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                    <ItemsControl ItemsSource="{Binding Products}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="{StaticResource BrushBorder}"
+                                        BorderThickness="0,0,0,1"
+                                        Padding="16,12">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="2*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <TextBlock Grid.Column="0"
+                                                   Text="{Binding ProductName}"
+                                                   Style="{StaticResource TextBody}"
+                                                   FontWeight="Medium"/>
+                                        <TextBlock Grid.Column="1"
+                                                   Text="{Binding SKU}"
+                                                   Style="{StaticResource TextMuted}"/>
+                                        <TextBlock Grid.Column="2"
+                                                   Text="{Binding CategoryName}"
+                                                   Style="{StaticResource TextMuted}"/>
+                                        <TextBlock Grid.Column="3"
+                                                   Text="{Binding StockQuantity}"
+                                                   Style="{StaticResource TextBody}"/>
+                                        <TextBlock Grid.Column="4"
+                                                   Text="{Binding UnitPrice, StringFormat='${0:F2}'}"
+                                                   Style="{StaticResource TextBody}"/>
+
+                                        <!-- Status Badge -->
+                                        <Border Grid.Column="5"
+                                                CornerRadius="4"
+                                                Padding="8,3"
+                                                HorizontalAlignment="Left">
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Background" Value="{StaticResource BrushAccentMuted}"/>
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding IsLowStock}" Value="True">
+                                                            <Setter Property="Background" Value="#1F2A00"/>
+                                                        </DataTrigger>
+                                                        <DataTrigger Binding="{Binding StockQuantity}" Value="0">
+                                                            <Setter Property="Background" Value="#2A0000"/>
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <TextBlock>
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="In Stock"/>
+                                                        <Setter Property="Foreground" Value="{StaticResource BrushAccent}"/>
+                                                        <Setter Property="FontSize" Value="11"/>
+                                                        <Setter Property="FontWeight" Value="SemiBold"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding IsLowStock}" Value="True">
+                                                                <Setter Property="Text" Value="Low Stock"/>
+                                                                <Setter Property="Foreground" Value="{StaticResource BrushWarning}"/>
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding StockQuantity}" Value="0">
+                                                                <Setter Property="Text" Value="Out of Stock"/>
+                                                                <Setter Property="Foreground" Value="{StaticResource BrushDanger}"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
