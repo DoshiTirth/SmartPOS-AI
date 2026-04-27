@@ -284,4 +284,7 @@ feature/react-dashboard -- React manager portal
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+Copyright (c) 2026 Tirth Doshi. All rights reserved.
+
+This project and its source code are the intellectual property of Tirth Doshi. No part of this project may be reproduced, distributed, modified, or used in any form without explicit written permission from the author.
+
