@@ -13,6 +13,7 @@ A hybrid, enterprise-grade Point of Sale system built with the same architecture
 
 ## Demo
 
+https://github.com/user-attachments/assets/0502bfbe-cd4b-40f0-a15f-aaa369ab067e
 
 ---
 
