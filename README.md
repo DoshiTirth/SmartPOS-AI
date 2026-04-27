@@ -5,9 +5,14 @@
 [![Python](https://img.shields.io/badge/Python_3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org)
 [![React](https://img.shields.io/badge/React_18-20232A?style=flat-square&logo=react&logoColor=61DAFB)](https://react.dev)
 [![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=flat-square&logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/en-us/sql-server)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg?style=flat-square)](#license)
 
 A hybrid, enterprise-grade Point of Sale system built with the same architecture used by Square, Lightspeed, and Toast — a C# WPF desktop app for cashiers, an ASP.NET Core Web API backend, a React manager dashboard, and Python AI microservices running sales forecasting, customer segmentation, and transaction anomaly detection.
+
+---
+
+## Demo
+
 
 ---
 
@@ -15,6 +20,9 @@ A hybrid, enterprise-grade Point of Sale system built with the same architecture
 
 ### WPF Desktop — Cashier Terminal
 ![Desktop App](docs/screenshots/desktop.png)
+
+### React Dashboard
+![Analytics](docs/screenshots/dashboard.png)
 
 ### React Dashboard — Analytics
 ![Analytics](docs/screenshots/analytics.png)
@@ -286,5 +294,5 @@ feature/react-dashboard -- React manager portal
 
 Copyright (c) 2026 Tirth Doshi. All rights reserved.
 
-This project and its source code are the intellectual property of Tirth Doshi. No part of this project may be reproduced, distributed, modified, or used in any form without explicit written permission from the author.
+This software and its source code are the intellectual property of Tirth Doshi. No part of this software may be reproduced, distributed, modified, or used in any form without explicit written permission from the author.
 
