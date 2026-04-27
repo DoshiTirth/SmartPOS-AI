@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-xl border border-border p-6 shadow-sm;
+  }
+
+  .card-hover {
+    @apply card transition-shadow duration-200 hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-lg font-medium 
+           hover:bg-blue-800 transition-colors duration-150 cursor-pointer
+           flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-surface2 text-text px-4 py-2 rounded-lg font-medium 
+           border border-border hover:bg-border transition-colors duration-150 
+           cursor-pointer flex items-center gap-2;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-white px-4 py-2 rounded-lg font-medium 
+           hover:bg-amber-600 transition-colors duration-150 cursor-pointer
+           flex items-center gap-2;
+  }
+
+  .badge-success {
+    @apply bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded-md;
+  }
+
+  .badge-warning {
+    @apply bg-amber-100 text-amber-700 text-xs font-semibold px-2 py-1 rounded-md;
+  }
+
+  .badge-danger {
+    @apply bg-red-100 text-red-700 text-xs font-semibold px-2 py-1 rounded-md;
+  }
+
+  .badge-info {
+    @apply bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-1 rounded-md;
+  }
+
+  .table-header {
+    @apply bg-surface2 text-muted text-xs font-semibold uppercase tracking-wide px-4 py-3;
+  }
+
+  .table-row {
+    @apply border-b border-border px-4 py-3 hover:bg-surface2 
+           transition-colors duration-150;
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-muted
+           hover:bg-surface2 hover:text-text transition-colors duration-150 
+           cursor-pointer font-medium;
+  }
+
+  .nav-item-active {
+    @apply nav-item bg-blue-50 text-primary;
+  }
+
+  .input {
+    @apply w-full px-3 py-2 rounded-lg border border-border bg-surface
+           text-text placeholder-muted focus:outline-none focus:ring-2 
+           focus:ring-primary focus:border-transparent transition-all duration-150;
+  }
+
+  .kpi-card {
+    @apply card flex flex-col gap-2;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color;
+  transition-duration: 150ms;
+}
