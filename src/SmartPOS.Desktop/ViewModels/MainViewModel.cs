@@ -8,7 +8,7 @@ namespace SmartPOS.Desktop.ViewModels
     public class MainViewModel : BaseViewModel
     {
         private readonly DispatcherTimer _clockTimer;
-        private object _currentView;
+        private object _currentView = new();
         private string _currentViewTitle = "POS Terminal";
 
         public string CashierName => SessionService.FullName;
@@ -42,20 +42,17 @@ namespace SmartPOS.Desktop.ViewModels
             NavigateCommand = new RelayCommand(Navigate);
             LogoutCommand = new RelayCommand(_ => Logout());
 
-            // Clock
             _clockTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
             _clockTimer.Tick += (s, e) => CurrentTime = DateTime.Now.ToString("hh:mm:ss tt");
             _clockTimer.Start();
             CurrentTime = DateTime.Now.ToString("hh:mm:ss tt");
 
-            // Default view
             Navigate("POS");
         }
 
         private void Navigate(object? parameter)
         {
             var destination = parameter?.ToString() ?? "POS";
-
             switch (destination)
             {
                 case "POS":
@@ -83,7 +80,6 @@ namespace SmartPOS.Desktop.ViewModels
             SessionService.ClearSession();
             var loginView = new Views.LoginView();
             loginView.Show();
-
             foreach (Window window in Application.Current.Windows)
                 if (window is not Views.LoginView)
                     window.Close();
